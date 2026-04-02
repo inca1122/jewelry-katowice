@@ -16,8 +16,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 </head>
 <body>
+
+  <!-- ========================
+       PRELOADER
+       ======================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <img src="images/logo.png" alt="Keta Gold" class="preloader__logo" />
+      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
   <!-- ========================
        NAVIGATION
@@ -246,92 +262,143 @@
       <div class="gallery__grid">
 
         <div class="gallery__item reveal">
-          <img src="images/464922204_18045934484076803_7547638130621449087_n.jpg" alt="Złoty łańcuszek z diamentami" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/464922204_18045934484076803_7547638130621449087_n.jpg" alt="Łańcuszek kubański z diamentami" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Łańcuszek kubański z diamentami</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-1">
           <img src="images/278121049_3817785085106099_484976955253354978_n.jpg" alt="Wisiorek z opalem" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="gallery__item__overlay"><span>Wisiorek z opalem</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-2">
           <img src="images/641659559_1768763944405184_631486704320821933_n.jpg" alt="Złota bransoletka kwiatowa" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="gallery__item__overlay"><span>Złota bransoletka kwiatowa</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-3">
-          <img src="images/518396244_1574531230495124_3612413421979046424_n.jpg" alt="Wisiorek z grawerunkiem" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/518396244_1574531230495124_3612413421979046424_n.jpg" alt="Wisiorek grawerowany" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Wisiorek grawerowany</span></div>
         </div>
 
         <div class="gallery__item reveal">
           <img src="images/620499730_18100132564867793_5886379338599602004_n.jpg" alt="Srebrne wisiorki – lwy" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="gallery__item__overlay"><span>Srebrne wisiorki – lwy</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-1">
-          <img src="images/569841268_1662579705023609_8967797265269609106_n.jpg" alt="Pierścionek zaręczynowy z zielonym kamieniem" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/569841268_1662579705023609_8967797265269609106_n.jpg" alt="Pierścionek zaręczynowy" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Pierścionek zaręczynowy</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-2">
-          <img src="images/634878974_1764106574870921_2426332589946437043_n.jpg" alt="Złoty pierścionek z brylantem" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/634878974_1764106574870921_2426332589946437043_n.jpg" alt="Soliter złoty" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Soliter złoty</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-3">
-          <img src="images/262644615_3094327710856281_8707637242066880330_n.jpg" alt="Srebrny pierścionek z bursztynem" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/262644615_3094327710856281_8707637242066880330_n.jpg" alt="Pierścionek z bursztynem" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Pierścionek z bursztynem</span></div>
         </div>
 
         <div class="gallery__item reveal">
-          <img src="images/550168238_1674901297124783_3264672919285235873_n.jpg" alt="Kolczyki perłowe – rzeźba" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/550168238_1674901297124783_3264672919285235873_n.jpg" alt="Kolczyki artystyczne" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Kolczyki artystyczne</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-1">
           <img src="images/649218822_18013255367672607_7876714700084012522_n.jpg" alt="Złoty łańcuszek z zawieszkami" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="gallery__item__overlay"><span>Złoty łańcuszek z zawieszkami</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-2">
-          <img src="images/635986855_1763296951618550_7049143992391440968_n.jpg" alt="Biżuteria Keta Gold" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <img src="images/635986855_1763296951618550_7049143992391440968_n.jpg" alt="Pierścionek Keta Gold" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Pierścionek Keta Gold</span></div>
         </div>
 
         <div class="gallery__item reveal reveal-delay-3">
-          <img src="images/639535765_1768749751073270_6384958217436652347_n.jpg" alt="Biżuteria Keta Gold" loading="lazy" />
-          <div class="gallery__item__overlay">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <img src="images/639535765_1768749751073270_6384958217436652347_n.jpg" alt="Bransoletka Keta Gold" loading="lazy" />
+          <div class="gallery__item__overlay"><span>Bransoletka Keta Gold</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       GOOGLE REVIEWS
+       ======================== -->
+  <section class="reviews" id="opinie">
+    <div class="container">
+      <div class="reviews__header">
+        <span class="section-label reveal">Co mówią klienci</span>
+        <h2 class="section-title reveal reveal-delay-1">Opinie</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <div class="reviews__score reveal reveal-delay-2">
+          <div class="reviews__google-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            <div>
+              <span class="reviews__rating-num">5.0</span>
+              <div class="reviews__stars">★★★★★</div>
+              <span class="reviews__count">Ocena w Google</span>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/place/Keta+Gold/@50.2613,19.0238,17z" target="_blank" rel="noopener" class="reviews__all-link">Zobacz wszystkie opinie →</a>
+        </div>
+      </div>
+
+      <div class="reviews__grid">
+
+        <div class="review-card reveal">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Zamawiałam obrączki ślubne – efekt przeszedł oczekiwania. Panowie są niezwykle profesjonalni, doradzili w każdym szczególe. Pierścionki wyglądają obłędnie."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">K</div>
+            <div>
+              <strong>Karolina W.</strong>
+              <span>Google · 2 miesiące temu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Zamówiłem wisiorek z grawerunkiem jako prezent. Praca jest absolutnie niesamowita – poziom detalu nie do wiary. Polecam z całego serca każdemu, kto szuka czegoś wyjątkowego."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">M</div>
+            <div>
+              <strong>Marcin T.</strong>
+              <span>Google · 5 miesięcy temu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Perfekcja w każdym calu. Projekt 3D pierścionka zaręczynowego zrobili dokładnie tak jak sobie wymarzyłem. Szybka realizacja i przepiękne wykonanie. Narzeczona była zachwycona!"</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">P</div>
+            <div>
+              <strong>Piotr K.</strong>
+              <span>Google · 7 miesięcy temu</span>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Calendly floating button -->
+  <div class="calendly-fab" id="calendlyBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+      <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+    </svg>
+    <span>Umów wizytę</span>
+  </div>
 
   <!-- ========================
        KONTAKT
@@ -509,6 +576,7 @@
     </div>
   </div>
 
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script src="js/main.js"></script>
 </body>
 </html>
