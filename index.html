@@ -25,19 +25,16 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
 
-      <!-- LEFT: logo + services -->
-      <div class="nav__left">
-        <a href="#hero" class="nav__logo" aria-label="Keta Gold – strona główna">
-          <img src="images/logo.png" alt="Keta Gold logo" />
-        </a>
-        <ul class="nav__services">
+      <a href="#hero" class="nav__logo" aria-label="Keta Gold – strona główna">
+        <img src="images/logo.png" alt="Keta Gold logo" />
+      </a>
 
-          <!-- Dropdown: Łańcuszki -->
+      <div class="nav__menu">
+        <!-- Services group (left) -->
+        <ul class="nav__group nav__group--services">
+
           <li class="nav__has-dropdown">
-            <span class="nav__dropdown-trigger">
-              Łańcuszki
-              <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
+            <span class="nav__dropdown-trigger">Łańcuszki <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             <div class="nav__dropdown">
               <a href="#" data-product="lancuszki-kubanie">Łańcuszki kubańskie</a>
               <a href="#" data-product="lancuszki-zlote">Łańcuszki złote</a>
@@ -46,12 +43,8 @@
             </div>
           </li>
 
-          <!-- Dropdown: Projektowanie 3D -->
           <li class="nav__has-dropdown">
-            <span class="nav__dropdown-trigger">
-              Projektowanie 3D
-              <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
+            <span class="nav__dropdown-trigger">Projektowanie 3D <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             <div class="nav__dropdown">
               <a href="#" data-product="3d-modelowanie">Modelowanie cyfrowe</a>
               <a href="#" data-product="3d-odlew">Odlew jubilerski</a>
@@ -60,12 +53,8 @@
             </div>
           </li>
 
-          <!-- Dropdown: Obrączki ślubne -->
           <li class="nav__has-dropdown">
-            <span class="nav__dropdown-trigger">
-              Obrączki ślubne
-              <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
+            <span class="nav__dropdown-trigger">Obrączki ślubne <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             <div class="nav__dropdown">
               <a href="#" data-product="obr-zloto">Złoto żółte</a>
               <a href="#" data-product="obr-biale">Białe złoto</a>
@@ -74,12 +63,8 @@
             </div>
           </li>
 
-          <!-- Dropdown: Pierścionki -->
           <li class="nav__has-dropdown">
-            <span class="nav__dropdown-trigger">
-              Pierścionki
-              <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
+            <span class="nav__dropdown-trigger">Pierścionki <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             <div class="nav__dropdown">
               <a href="#" data-product="pier-soliter">Soliter</a>
               <a href="#" data-product="pier-kolorowe">Z kamieniami kolorowymi</a>
@@ -89,14 +74,14 @@
           </li>
 
         </ul>
-      </div>
 
-      <!-- RIGHT: simple links -->
-      <ul class="nav__links">
-        <li><a href="#o-nas">O nas</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
+        <!-- Page links group (right) -->
+        <ul class="nav__group nav__group--links">
+          <li><a href="#o-nas">O nas</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
       <button class="nav__hamburger" aria-label="Menu" aria-expanded="false">
         <span></span>
         <span></span>
