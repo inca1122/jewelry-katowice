@@ -369,21 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
   formClose?.addEventListener('click', closeForm);
   formBackdrop?.addEventListener('click', closeForm);
 
-  // ===========================
-  // CALENDLY
-  // ===========================
-  // ⚠️ Zamień 'YOUR_CALENDLY_URL' na swój publiczny link Calendly
-  const CALENDLY_URL = 'https://calendly.com/incaplatform-yandex';
-
-  document.getElementById('calendlyBtn')?.addEventListener('click', () => {
-    if (typeof Calendly !== 'undefined') {
-      Calendly.initPopupWidget({ url: CALENDLY_URL });
-    } else {
-      window.open(CALENDLY_URL, '_blank');
-    }
-  });
-
-  contactForm?.addEventListener('submit', (e) => {
+contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const name  = document.getElementById('fieldName').value.trim();
     const phone = document.getElementById('fieldPhone').value.trim();
