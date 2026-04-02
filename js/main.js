@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // CALENDLY
   // ===========================
   // ⚠️ Zamień 'YOUR_CALENDLY_URL' na swój publiczny link Calendly
-  const CALENDLY_URL = 'https://calendly.com/ketagold-katowice';
+  const CALENDLY_URL = 'https://calendly.com/incaplatform-yandex';
 
   document.getElementById('calendlyBtn')?.addEventListener('click', () => {
     if (typeof Calendly !== 'undefined') {
