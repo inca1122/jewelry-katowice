@@ -1686,10 +1686,6 @@ section {
 /* ===========================
    CUSTOM CURSOR
    =========================== */
-@media (pointer: fine) {
-  body { cursor: none; }
-  a, button, [data-product], .service-card, .gallery__item { cursor: none; }
-}
 
 .cursor-ring {
   position: fixed;
