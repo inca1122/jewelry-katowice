@@ -171,6 +171,27 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 
+  // --- Dropdown: open on click, close on outside click ---
+  document.querySelectorAll('.nav__dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parent = trigger.closest('.nav__has-dropdown');
+      const isOpen = parent.classList.contains('open');
+      // Close all dropdowns
+      document.querySelectorAll('.nav__has-dropdown.open').forEach(el => el.classList.remove('open'));
+      // Toggle clicked one
+      if (!isOpen) parent.classList.add('open');
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav__has-dropdown.open').forEach(el => el.classList.remove('open'));
+  });
+
+  document.querySelectorAll('.nav__dropdown').forEach(dd => {
+    dd.addEventListener('click', (e) => e.stopPropagation());
+  });
+
   // --- Mobile menu ---
   const hamburger = document.querySelector('.nav__hamburger');
   const mobileMenu = document.querySelector('.nav__mobile');
