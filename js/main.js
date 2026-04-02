@@ -138,11 +138,65 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Parallax on hero ---
-  window.addEventListener('scroll', () => {
-    const heroBg = document.querySelector('.hero__bg');
-    if (heroBg) {
-      heroBg.style.transform = `scale(1.05) translateY(${window.scrollY * 0.25}px)`;
+  const heroBgEl = document.querySelector('.hero__bg');
+  if (heroBgEl) {
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      heroBgEl.style.transform = `translateY(${offset * 0.3}px)`;
+    }, { passive: true });
+  }
+
+  // --- Form Modal ---
+  const formModal   = document.getElementById('formModal');
+  const formBackdrop = document.getElementById('formBackdrop');
+  const formClose   = document.getElementById('formClose');
+  const formServiceTag = document.getElementById('formServiceTag');
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  const formContent = document.getElementById('formContent');
+
+  function openForm(serviceName) {
+    if (formServiceTag && serviceName) formServiceTag.textContent = serviceName;
+    formModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeForm() {
+    formModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Open on service card click
+  document.querySelectorAll('.service-card[data-service]').forEach(card => {
+    card.addEventListener('click', () => openForm(card.dataset.service));
+  });
+
+  formClose?.addEventListener('click', closeForm);
+  formBackdrop?.addEventListener('click', closeForm);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && formModal.classList.contains('open')) closeForm();
+  });
+
+  // Form submit → show success
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name  = document.getElementById('fieldName').value.trim();
+    const phone = document.getElementById('fieldPhone').value.trim();
+    if (!name || !phone) {
+      alert('Proszę podać imię i numer telefonu.');
+      return;
     }
-  }, { passive: true });
+    formContent.style.display = 'none';
+    formSuccess.style.display = 'block';
+    // Auto-close after 4 seconds
+    setTimeout(closeForm, 4000);
+    // Reset form after close
+    setTimeout(() => {
+      contactForm.reset();
+      formContent.style.display = 'block';
+      formSuccess.style.display = 'none';
+    }, 4500);
+  });
 
 });

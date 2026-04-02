@@ -111,10 +111,30 @@
           </div>
         </div>
         <div class="about__image-wrap reveal reveal-delay-2">
-          <img
-            src="images/Снимок экрана 2026-04-02 151528.png"
-            alt="Salon Keta Gold – Piastowska 3, Katowice"
-          />
+          <div class="about__photos">
+            <img
+              class="about__photo-main"
+              src="images/654788367_1788681645746747_1018519775686216154_n.jpg"
+              alt="Obrączki ślubne – Keta Gold"
+              loading="lazy"
+            />
+            <img
+              class="about__photo-secondary"
+              src="images/652395713_1790529945561917_4396226358533787911_n.jpg"
+              alt="Wisiorek złoty – Keta Gold"
+              loading="lazy"
+            />
+            <div class="about__location-card">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <strong>Keta Gold</strong>
+                <small>ul. Piastowska 3<br/>Katowice</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -135,7 +155,7 @@
     <div class="services__grid">
 
       <!-- 1. Łańcuszki -->
-      <div class="service-card reveal">
+      <div class="service-card reveal" data-service="Wytwarzanie łańcuszków" style="cursor:pointer">
         <img
           class="service-card__img"
           src="images/649218822_18013255367672607_7876714700084012522_n.jpg"
@@ -156,7 +176,7 @@
       </div>
 
       <!-- 2. Projektowanie 3D -->
-      <div class="service-card reveal reveal-delay-1">
+      <div class="service-card reveal reveal-delay-1" data-service="Projektowanie 3D" style="cursor:pointer">
         <img
           class="service-card__img"
           src="images/518396244_1574531230495124_3612413421979046424_n.jpg"
@@ -178,7 +198,7 @@
       </div>
 
       <!-- 3. Obrączki ślubne -->
-      <div class="service-card reveal reveal-delay-2">
+      <div class="service-card reveal reveal-delay-2" data-service="Obrączki ślubne" style="cursor:pointer">
         <img
           class="service-card__img"
           src="images/634878974_1764106574870921_2426332589946437043_n.jpg"
@@ -199,7 +219,7 @@
       </div>
 
       <!-- 4. Pierścionki zaręczynowe -->
-      <div class="service-card reveal reveal-delay-3">
+      <div class="service-card reveal reveal-delay-3" data-service="Pierścionki zaręczynowe" style="cursor:pointer">
         <img
           class="service-card__img"
           src="images/569841268_1662579705023609_8967797265269609106_n.jpg"
@@ -249,7 +269,7 @@
         </div>
 
         <div class="gallery__item reveal reveal-delay-2">
-          <img src="images/486690070_1321939895692366_3376018940886417503_n.jpg" alt="Pierścionek kwiatowy z niebieskim kamieniem" loading="lazy" />
+          <img src="images/641659559_1768763944405184_631486704320821933_n.jpg" alt="Złota bransoletka kwiatowa" loading="lazy" />
           <div class="gallery__item__overlay">
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </div>
@@ -429,7 +449,9 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__logo">
-        <img src="images/логотип.jpg" alt="Keta Gold" />
+        <div class="footer__logo-circle">
+          <img src="images/логотип.jpg" alt="Keta Gold" />
+        </div>
       </div>
       <p class="footer__copy">
         &copy; 2025 Keta Gold · Bracia Lebieżyńscy Spółka Cywilna · Katowice
@@ -445,6 +467,48 @@
     <button class="lightbox__prev" aria-label="Poprzednie zdjęcie">&#8249;</button>
     <img class="lightbox__img" src="" alt="Galeria Keta Gold" />
     <button class="lightbox__next" aria-label="Następne zdjęcie">&#8250;</button>
+  </div>
+
+  <!-- ========================
+       FORM MODAL
+       ======================== -->
+  <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-label="Formularz kontaktowy">
+    <div class="form-modal__backdrop" id="formBackdrop"></div>
+    <div class="form-modal__panel">
+      <button class="form-modal__close" id="formClose" aria-label="Zamknij">&times;</button>
+
+      <div id="formContent">
+        <span class="form-modal__service-tag" id="formServiceTag">Zapytanie</span>
+        <h2 class="form-modal__title">Skontaktuj się z nami</h2>
+        <p class="form-modal__subtitle">Wypełnij formularz – oddzwonimy lub napiszemy w ciągu 24 godzin.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="fieldName">Imię i nazwisko</label>
+            <input type="text" id="fieldName" name="name" placeholder="Jan Kowalski" required />
+          </div>
+          <div class="form-group">
+            <label for="fieldPhone">Telefon</label>
+            <input type="tel" id="fieldPhone" name="phone" placeholder="+48 000 000 000" required />
+          </div>
+          <div class="form-group">
+            <label for="fieldEmail">E-mail</label>
+            <input type="email" id="fieldEmail" name="email" placeholder="jan@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="fieldMessage">Wiadomość (opcjonalnie)</label>
+            <textarea id="fieldMessage" name="message" placeholder="Opisz swoje oczekiwania..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Wyślij zapytanie</button>
+        </form>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Dziękujemy!</h3>
+        <p>Odezwiemy się wkrótce.<br/>Do zobaczenia w Keta Gold.</p>
+      </div>
+    </div>
   </div>
 
   <script src="js/main.js"></script>
