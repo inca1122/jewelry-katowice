@@ -162,56 +162,6 @@ const PRODUCTS = {
   },
 };
 
-// ===========================
-// PRELOADER
-// ===========================
-const preloader = document.getElementById('preloader');
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    preloader?.classList.add('hide');
-    setTimeout(() => preloader && (preloader.style.display = 'none'), 900);
-  }, 1400);
-});
-
-// ===========================
-// CUSTOM CURSOR
-// ===========================
-const cursorRing = document.getElementById('cursorRing');
-const cursorDot  = document.getElementById('cursorDot');
-
-if (window.matchMedia('(pointer: fine)').matches && cursorRing && cursorDot) {
-  let ringX = 0, ringY = 0;
-  let dotX = 0, dotY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    dotX = e.clientX; dotY = e.clientY;
-    cursorDot.style.left = dotX + 'px';
-    cursorDot.style.top  = dotY + 'px';
-    cursorDot.classList.add('visible');
-    cursorRing.classList.add('visible');
-  });
-
-  // Ring follows with slight lag
-  function animateRing() {
-    ringX += (dotX - ringX) * 0.12;
-    ringY += (dotY - ringY) * 0.12;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top  = ringY + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-
-  // Grow on hoverable elements
-  document.querySelectorAll('a, button, [data-product], .gallery__item, .service-card, .nav__social-icon, .calendly-fab').forEach(el => {
-    el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
-  });
-
-  document.addEventListener('mouseleave', () => {
-    cursorRing.classList.remove('visible');
-    cursorDot.classList.remove('visible');
-  });
-}
 
 document.addEventListener('DOMContentLoaded', () => {
 
