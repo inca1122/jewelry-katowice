@@ -197,18 +197,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.querySelector('.nav__mobile');
   const mobileLinks = document.querySelectorAll('.nav__mobile a');
 
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
   hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    const isOpen = mobileMenu.classList.contains('open');
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      hamburger.classList.add('open');
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Close on backdrop click (left side of drawer)
+  mobileMenu?.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMobileMenu();
   });
 
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMobileMenu);
   });
 
   // --- Scroll reveal ---
